@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		meta(charset="utf-8")
+		title SuperMeteo Admin
+		link(rel="stylesheet", href="stylesheets/style.css")
+		script(src="javascripts/script.js")
+	body(onload="loadCities()")
+		h1 Bienvenue sur SuperMeteo Admin!
+		p Selectionnez votre ville:
+			select(name="city")#city_selector
+			button(onclick="loadAdmin()") Charger le panneau d'administration pour cette vile!
+			
+			
+		p
+			textarea#news Saisir l'article ici.
+		p
+			button(onclick="submitNews()") Mettre à jour.
+			
+		#messages

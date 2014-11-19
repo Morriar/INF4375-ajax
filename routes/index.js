@@ -9,6 +9,12 @@ router.get('/', function(req, res) {
   res.render('portal', {});
 });
 
+/* GET admin page. */
+router.get('/admin', function(req, res) {
+  res.render('admin', {});
+});
+
+
 /* GET cities list */
 router.get('/cities/', function(req, res) {
 	res.json(cityNames());
