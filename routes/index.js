@@ -6,7 +6,7 @@ var data = require('../data/cities');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('portal', {});
 });
 
 /* GET cities list */
