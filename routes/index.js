@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var xmldom = require('xmldom');
 var router = express.Router();
 var data = require('../data/cities');
 
@@ -33,6 +34,18 @@ router.get('/news/:city', function(req, res) {
 			title: "À la une",
 			content: data.toString()
 		});
+	});
+});
+
+/* GET weather for a specific city */
+router.get('/weather/:city', function(req, res) {
+	var city = req.params.city;
+	if(!checkCity(city)) {
+		respondCityError(city, res);
+	}
+	res.render("weather", {
+		city: city,
+		temp: Math.floor((Math.random() * 10) + 1) * -1
 	});
 });
 
