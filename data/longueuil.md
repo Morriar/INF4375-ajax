@@ -1,0 +1,1 @@
+Longueuil est une ville du Québec, au Canada, située sur la rive sud du fleuve Saint-Laurent, face à Montréal. Elle forme le cœur de l'agglomération de Longueuil, le secteur le plus urbanisé de la région de la Montérégie.

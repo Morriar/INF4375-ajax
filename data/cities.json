@@ -1,0 +1,11 @@
+{
+	"Montréal": {
+		"file": "montreal.md"
+	},
+	"Laval": {
+		"file": "laval.md"
+	},
+	"Longueuil": {
+		"file": "longueuil.md"
+	}
+}
