@@ -55,6 +55,33 @@ router.get('/weather/:city', function(req, res) {
 	});
 });
 
+/* PUT news article for city. */
+router.put('/news/:city', function(req, res) {
+	var city = req.params.city;
+	if(!checkCity(city)) {
+		respondCityError(city, res);
+	}
+	var news = req.body;
+	if(!news.content) {
+		res.status(400);
+		res.render("public_error", {
+			message: "Bad Request: Invalid news content.",
+			reason: "Expected a JSON object with a `content` key."
+		});
+	}
+	var file = data.cities[city].file;
+	fs.writeFile('data/' + file, news.content, function(err) {
+		if(err) {
+			res.status(500);
+			res.render("public_error", {
+				message: "Internal server error, try later.",
+				reason: "Cannot save news for city " + city + "."
+			});
+		}
+		res.send("News for "+ city +" successfully saved");
+	});
+});
+
 /* Check if the city is in the `cities` list. */
 function checkCity(city) {
 	return data.cities[city]
